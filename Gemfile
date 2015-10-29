@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.4'
 # Use mysql as the database for Active Record
 #gem 'mysql2', '~> 0.3.13'
-#Gemas de HAML
+#Gemas de HAML e
 gem 'pg', '~> 0.18.3'
 gem 'haml'
 gem 'haml-rails'
