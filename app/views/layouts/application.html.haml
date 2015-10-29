@@ -1,0 +1,59 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title PortalDeVentas
+    %link{:href => "https://fonts.googleapis.com/css?family=Roboto:400,700,400italic,900", :rel => "stylesheet", :type => "text/css"}/
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  /end of head
+  %body
+  %header
+    %nav#sc1.be-red.white.large-padding
+      %ul.center-xs.middle-xs
+        %li
+          = link_to root_path do
+            Home
+        %li
+          = link_to indexRegularUsers_path do
+            Shop
+        %li
+          = link_to new_article_path do
+            New Article
+        - if current_user
+          %li
+            = link_to myArticles_path do
+              My Articles
+              
+        - if current_user
+          - if current_user.admin?
+            %li
+              = link_to new_category_path do
+                Categories
+        - if current_user
+          - if current_user.admin?
+            %li
+            = link_to articles_path do
+              Administrate Articles
+            %li 
+              = link_to users_path do
+                Administrate Users
+        %li
+          = link_to new_user_path do
+            Register  
+        
+        %li
+          = link_to logout_path do
+            Logout
+  %div.formStyle
+  - if current_user
+    Signed in as
+    = succeed "!" do
+      %strong= current_user.name
+    = link_to "Sign out", signout_path, id: "sign_out"
+  - else
+    = link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in"
+  = yield
+  /end of body
+

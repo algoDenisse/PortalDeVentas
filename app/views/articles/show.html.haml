@@ -1,0 +1,41 @@
+%div.formStyleShow.relative
+  %div.articleInfo.show-control
+    %p#notice= notice
+    - unless @article.imageable.nil?
+      %p
+        Sold by: #{@article.imageable.name}
+    %p
+      %b Name:
+      = @article.name
+    %p
+      %b Price:
+      = @article.price
+    %p
+      %b Likes:
+      = @article.likes
+    %p
+      %b Description:
+      = @article.description
+  %div.articleImage
+    .field
+      = image_tag @article.image.url(:mini)
+  %div.clear
+
+  %div.artcileReviews
+    .field
+      %h3 Reviews
+      = render "reviews/form"
+      %ul#reviews-box
+      - @article.reviews.each do |review|
+        %li
+        - if review.approved?
+          = review.comment
+          \- #{review.reviewable.name}
+          - if current_user
+            - if current_user.admin?
+              \|
+              = link_to 'Ban Comment', banReview_article_review_path(@article.id, review.id)
+
+  = toggle_like_button(@article, current_user)
+  \|
+  = link_to 'Back', indexRegularUsers_path

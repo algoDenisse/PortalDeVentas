@@ -1,0 +1,101 @@
+=form_tag articles_path, :method => 'get' do
+  
+  %p
+    
+    = text_field_tag :search, params[:search]    
+    = submit_tag 'Search', :name => nil
+
+%div.formStyle
+  %table#tablaResultado
+    %thead
+      %tr
+        %th Name
+        %th Price
+        %th Likes
+        %th Description
+        %th State
+        %th
+        %th
+        %th
+
+    %tbody
+      %div
+        %h2 Pending Articles
+        - @articles.each do |article|
+          %tr
+          - if article.pending?
+            %td= article.name
+            %td= article.price
+            %td= article.likes
+            %td= article.description
+            %td= article.state
+            %td
+            %td
+            %td= link_to 'Show', article
+            %td= link_to 'Edit', edit_article_path(article)
+            %td= link_to 'Destroy', article, :method => :delete, :data => { :confirm => 'Are you sure?' }
+            %td= link_to 'Approve', approveArticle_article_path(article)
+            %td= link_to 'Reject', rejectArticle_article_path(article)
+  %br
+  %table#tablaResultado
+    %thead
+      %tr
+        %th Name
+        %th Price
+        %th Likes
+        %th Description
+        %th State
+        %th
+        %th
+        %th
+
+    %tbody
+      %div
+        %h2 Approved Articles
+        - @articles.each do |article|
+          %tr
+          - if article.approved?
+            %td= article.name
+            %td= article.price
+            %td= article.likes
+            %td= article.description
+            %td= article.state
+            %td
+            %td
+            %td= link_to 'Show', article
+            %td= link_to 'Edit', edit_article_path(article)
+            %td= link_to 'Destroy', article, :method => :delete, :data => { :confirm => 'Are you sure?' }
+            %td= link_to 'Reject', rejectArticle_article_path(article)
+  %br
+  %table#tablaResultado
+    %thead
+      %tr
+        %th Name
+        %th Price
+        %th Likes
+        %th Description
+        %th State
+        %th
+        %th
+        %th
+
+    %tbody  
+      %div
+        %h2 Rejected Articles
+        - @articles.each do |article|
+          %tr
+          - if article.rejected?
+            %td= article.name
+            %td= article.price
+            %td= article.likes
+            %td= article.description
+            %td= article.state
+            %td
+            %td
+            %td= link_to 'Show', article
+            %td= link_to 'Edit', edit_article_path(article)
+            %td= link_to 'Destroy', article, :method => :delete, :data => { :confirm => 'Are you sure?' }
+            %td= link_to 'Approve', approveArticle_article_path(article)
+
+  %br
+

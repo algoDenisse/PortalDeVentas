@@ -1,0 +1,136 @@
+html, body, h1, h2{
+	margin: 0px;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+
+#sc1 {
+  & ul {
+    display: flex;
+    width: 100%;
+    list-style-type: none;
+    & li {
+      flex: 1 1 100%;
+    }
+  }
+}
+
+.be-red{
+	background-color: #402F37;
+}
+.white{
+	color: #CD9FB8;
+}
+.large-padding{
+	padding: 10px 7px;
+}
+a,a:visited{
+	color: inherit !important; 
+	text-decoration: none;
+}
+.field{
+  margin-top: 1em;
+}
+.form-control{
+  border:none;
+  border-bottom: 1px solid;
+  outline: none;
+  width: 100%;
+  display:block;
+  padding: 10px 0px;
+  font-size: 1.2em;
+}
+
+.show-control{
+  width: 60%;
+  padding: 10px 0px;
+  font-size: 1.2em;
+}
+
+.formStyle{
+  width: 80%;
+  margin: 0 auto;
+}
+.formStyleShow{
+  width: 80%;
+  margin: 0 auto;
+}
+
+
+
+.btnStyle{
+  background-color: #444235;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  padding: 10px 12px;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.artStyle{
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  padding-right: var( --half-gutter-width, 0.5rem );
+  padding-left: var( --half-gutter-width, 0.5rem );
+  flex-basis: 25%;
+  max-width: 25%;
+}
+
+.realtive{
+  position: relative;
+
+}
+
+.absolute{
+  position: absolute;
+}
+
+/*estilo de la tablaResultado*/
+table#tablaResultado {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    font-family: Agenda-Light, sans-serif;
+    font-weight: 100; 
+    background: #333; color: #fff;
+    text-rendering: optimizeLegibility;
+    border-radius: 5px; 
+}
+
+table#tablaResultado thead th { font-weight: 600; }
+table#tablaResultado thead th, table#tablaResultado tbody td { 
+  padding: .8rem; font-size: 0.8rem;
+}
+table#tablaResultado tbody td { 
+  padding: .8rem; font-size: 0.8rem;
+  color: #444; background: #eee; 
+}
+table#tablaResultado tbody tr:not(:last-child) { 
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;  
+}
+
+.articleInfo{
+  float:left; 
+}
+
+.articleInfo p{
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2em;
+}
+
+.articleImage{
+ float:left;
+}
+
+.clear{
+  clear: both;
+}
+.articleReviews{
+
+}

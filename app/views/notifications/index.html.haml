@@ -1,0 +1,16 @@
+%div.formStyle
+  %br
+  %h2 Notification for this item
+  %br
+  %table#tablaResultado
+    %thead
+      %tr
+      %th Notification
+    
+
+    %tbody
+      - @notifications.each do |notification|
+        %tr
+          %td= notification.notification
+
+  %br

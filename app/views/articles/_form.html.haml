@@ -1,0 +1,25 @@
+%div.formStyle
+  = form_for @article do |f|
+    - if @article.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@article.errors.count, "error")} prohibited this article from being saved:"
+        %ul
+          - @article.errors.full_messages.each do |msg|
+            %li= msg
+
+    .field
+      = f.text_field :name, placeholder: "Name", class: "form-control"
+    .field
+      = f.text_field :price, placeholder: "Precio", class: "form-control"
+    .field
+      = f.text_area :description, placeholder: "Description", class: "form-control"
+
+    .field 
+      = f.label :image
+      = f.file_field :image
+
+    .field
+      = f.select 'category_id', options_for_select(@category.collect{ |u| [u.name, u.id] })
+
+    .actions
+      = f.submit 'Save Article', class: "btnStyle white large-padding"

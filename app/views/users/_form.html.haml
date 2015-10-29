@@ -1,0 +1,17 @@
+%div.formStyle
+  = form_for @user do |f|
+    - if @user.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
+        %ul
+          - @user.errors.full_messages.each do |msg|
+            %li= msg
+
+    .field
+      = f.text_field :name, placeholder: "Name", class: "form-control"
+    .field
+      = f.text_field :email, placeholder: "Email", class: "form-control"
+    .field
+      = f.password_field :password, placeholder: "Password", class: "form-control"
+    .actions
+      = f.submit 'Save', class: "btnStyle white large-padding"
