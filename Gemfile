@@ -4,8 +4,9 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use mysql as the database for Active Record
-gem 'mysql2', '~> 0.3.13'
+#gem 'mysql2', '~> 0.3.13'
 #Gemas de HAML
+gem 'pg', '~> 0.18.3'
 gem 'haml'
 gem 'haml-rails'
 #Gema para las imagenes
